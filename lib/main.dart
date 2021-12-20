@@ -56,7 +56,7 @@ class Home extends StatelessWidget {
                 child: Center(
                   child: BlocBuilder<StopWatchBloc, StopWatchStates>(
                     builder: (context, state) {
-                      print('Timer: ${state.runtimeType}  ***  ${state.duration}');
+                      debugPrint('Timer: ${state.runtimeType}  ***  ${state.duration}');
                       final String minutes = ((state.duration / 60) % 60)
                           .floor()
                           .toString()
@@ -80,7 +80,7 @@ class Home extends StatelessWidget {
               BlocBuilder<StopWatchBloc, StopWatchStates>(
 
                 builder: (context, state) {
-                  print('builder --> ${state.runtimeType}');
+                  debugPrint('builder --> ${state.runtimeType}');
                   return const Actions();
                 },
               ),
@@ -97,7 +97,7 @@ class Actions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('ActionsBuild');
+    debugPrint('ActionsBuild');
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: mapStateToActionButtons(
